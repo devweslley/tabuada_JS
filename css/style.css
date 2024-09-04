@@ -1,99 +1,107 @@
+/* Reseta margens e preenchimentos padrão e define a fonte para todo o documento */
 * {
     margin: 0;
     padding: 0;
-    font-family: Helvetica;
+    font-family: Helvetica; /* Define a fonte padrão para Helvetica */
 }
 
+/* Estiliza o corpo do documento */
 body {
-    text-align: center;
-    padding: 2rem;
-    min-height: 100vh;
-    background: linear-gradient(180deg, #DB4444 0%, #3F24DD 98%);
-    color: #fff;
+    text-align: center; /* Centraliza o texto dentro do corpo */
+    padding: 2rem; /* Adiciona preenchimento de 2rem em torno do conteúdo */
+    min-height: 100vh; /* Garante que o corpo tenha no mínimo a altura da viewport */
+    background: linear-gradient(180deg, #db4444 0%, #3f24dd 98%); /* Define um gradiente linear de fundo */
+    color: #fff; /* Define a cor do texto como branca */
 }
 
+/* Estiliza o cabeçalho h2 */
 h2 {
-    margin-bottom: 1rem;
+    margin-bottom: 1rem; /* Adiciona uma margem inferior de 1rem */
 }
 
+/* Estiliza o formulário de multiplicação */
 #multiplication-form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    max-width: 300px;
-    margin: 1rem auto;
-    padding: 1rem;
-    background-color: #fff;
-    border-radius: 1rem;
-    color: #333;
+    display: flex; /* Usa o layout flexível */
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    align-items: center; /* Centraliza o conteúdo verticalmente */
+    flex-wrap: wrap; /* Permite que os itens se movam para a linha seguinte, se necessário */
+    max-width: 300px; /* Define uma largura máxima de 300px */
+    margin: 1rem auto; /* Adiciona uma margem automática nas laterais e 1rem no topo e na base */
+    padding: 1rem; /* Adiciona um preenchimento de 1rem ao redor do conteúdo */
+    background-color: #fff; /* Define a cor de fundo como branca */
+    border-radius: 1rem; /* Adiciona bordas arredondadas com raio de 1rem */
+    color: #333; /* Define a cor do texto como um tom de cinza escuro */
 }
 
+/* Estiliza os controles de formulário */
 .form-control {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100px;
-    margin: 0 1rem;
+    display: flex; /* Usa o layout flexível */
+    flex-direction: column; /* Organiza os itens na coluna */
+    align-items: center; /* Centraliza os itens horizontalmente */
+    width: 100px; /* Define uma largura de 100px */
+    margin: 0 1rem; /* Adiciona uma margem horizontal de 1rem */
 }
 
+/* Estiliza os rótulos dentro dos controles de formulário */
 .form-control label {
-    margin-bottom: 0.6rem;
-    font-size: 0.8rem;
-    font-weight: bold;
+    margin-bottom: 0.6rem; /* Adiciona uma margem inferior de 0.6rem */
+    font-size: 0.8rem; /* Define o tamanho da fonte como 0.8rem */
+    font-weight: bold; /* Define o peso da fonte como negrito */
 }
 
+/* Estiliza os campos de entrada dentro dos controles de formulário */
 .form-control input {
-    margin-bottom: 1rem;
-    flex: 1;
-    padding: 0.6rem 0.4rem;
-    border: 1px solid #333;
-    width: 50px;
-    border-radius: 5px;
-    text-align: center;
+    margin-bottom: 1rem; /* Adiciona uma margem inferior de 1rem */
+    flex: 1; /* Permite que o campo de entrada ocupe o espaço disponível */
+    padding: 0.6rem 0.4rem; /* Adiciona preenchimento interno de 0.6rem na parte superior e inferior e 0.4rem nas laterais */
+    border: 1px solid #333; /* Adiciona uma borda de 1px sólida de cor cinza escuro */
+    width: 50px; /* Define uma largura de 50px */
+    border-radius: 5px; /* Adiciona bordas arredondadas com raio de 5px */
+    text-align: center; /* Centraliza o texto dentro do campo de entrada */
 }
 
+/* Estiliza o botão de envio do formulário */
 #multiplication-form input[type="submit"] {
-    max-height: 50px;
-    padding: 0.6rem 1.2rem;
-    width: 200px;
-    color: #fff;
-    background-color: #333;
-    border: 1px solid #333;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
+    max-height: 50px; /* Define uma altura máxima de 50px */
+    padding: 0.6rem 1.2rem; /* Adiciona preenchimento interno de 0.6rem na parte superior e inferior e 1.2rem nas laterais */
+    width: 200px; /* Define uma largura de 200px */
+    color: #fff; /* Define a cor do texto como branca */
+    background-color: #333; /* Define a cor de fundo como cinza escuro */
+    border: 1px solid #333; /* Adiciona uma borda de 1px sólida de cor cinza escuro */
+    border-radius: 5px; /* Adiciona bordas arredondadas com raio de 5px */
+    cursor: pointer; /* Altera o cursor para uma mão ao passar sobre o botão */
+    font-weight: bold; /* Define o peso da fonte como negrito */
 }
 
-#multiplication-form input[type="submit"]:hover {
-    background-color: #4e4e4e;
-}
-
+/* Estiliza o contêiner de operações de multiplicação */
 #multiplication-operations {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 300px;
-    margin: 1rem auto;
-    padding: 2rem 1rem;
-    background-color: #fff;
-    color: #333;
-    border-radius: 1rem;
+    display: flex; /* Usa o layout flexível */
+    flex-direction: column; /* Organiza os itens na coluna */
+    align-items: center; /* Centraliza os itens horizontalmente */
+    max-width: 300px; /* Define uma largura máxima de 300px */
+    margin: 1rem auto; /* Adiciona uma margem automática nas laterais e 1rem no topo e na base */
+    padding: 2rem 1rem; /* Adiciona preenchimento interno de 2rem na parte superior e inferior e 1rem nas laterais */
+    background-color: #fff; /* Define a cor de fundo como branca */
+    color: #333; /* Define a cor do texto como um tom de cinza escuro */
+    border-radius: 1rem; /* Adiciona bordas arredondadas com raio de 1rem */
 }
 
+/* Estiliza as linhas de operações dentro do contêiner de operações */
 #multiplication-operations .row {
-    display: flex;
-    justify-content: center;
-    border: 1px solid #CCC;
-    border-bottom: none;
-    padding: 0.5rem;
-    width: 150px;
+    display: flex; /* Usa o layout flexível */
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    border: 1px solid #ccc; /* Adiciona uma borda de 1px sólida de cor cinza claro */
+    border-bottom: none; /* Remove a borda inferior */
+    padding: 0.5rem; /* Adiciona um preenchimento interno de 0.5rem */
+    width: 150px; /* Define uma largura de 150px */
 }
 
+/* Estiliza a última linha de operações para adicionar borda inferior */
 #multiplication-operations .row:last-child {
-    border-bottom: 1px solid #CCC;
+    border: 1px solid #ccc; /* Adiciona uma borda de 1px sólida de cor cinza claro */
 }
 
+/* Estiliza o resultado dentro da linha de operações */
 #multiplication-operations .result {
-    margin-left: 0.4rem;
+    margin-left: 0.4rem; /* Adiciona uma margem esquerda de 0.4rem */
 }

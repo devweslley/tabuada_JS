@@ -1,44 +1,49 @@
-// Seleção de elementos
-const multiplicationForm = document.querySelector('#multiplication-form') // Seleciona o formulário de multiplicação pelo ID
-const numberInput = document.querySelector('#number') // Seleciona o campo de entrada do número pelo ID
-const multiplicationInput = document.querySelector('#multiplication') // Seleciona o campo de entrada do multiplicador pelo ID
-const multiplicationTitle = document.querySelector('#multiplication-title span') // Seleciona o elemento <span> dentro do título de multiplicação pelo ID
-const multiplicationTable = document.querySelector('#multiplication-operations') // Seleciona o elemento que conterá as operações de multiplicação pelo ID
+// Seleções de elementos
+const multiplicationForm = document.querySelector('#multiplication-form'); // Seleciona o formulário de multiplicação
+const numberInput = document.querySelector('#number'); // Seleciona o campo de entrada para o número a ser multiplicado
+const multiplicationInput = document.querySelector('#multiplicator'); // Seleciona o campo de entrada para o número de multiplicações
+const multiplicationTable = document.querySelector('#multiplication-operations'); // Seleciona o elemento onde a tabela de multiplicação será exibida
+const multiplicationTitle = document.querySelector('#multiplication-title span'); // Seleciona o elemento onde o número da multiplicação será exibido
 
 // Funções
-const createTable = (number, multiplicatorNumber) => {
-    multiplicationTable.innerHTML = ''; // Limpa o conteúdo da tabela de multiplicação
+const createTable = (number, multiplicatorNumber) => {   
+    multiplicationTable.innerHTML = ""; // Limpa o conteúdo anterior da tabela de multiplicação
 
-    // Loop para criar as operações de multiplicação
-    for (i = 1; i <= multiplicatorNumber; i++) {
+    for (let i = 1; i <= multiplicatorNumber; i++) { // Loop de 1 até o número de multiplicações desejado
         const result = number * i; // Calcula o resultado da multiplicação
 
-        // Template HTML para a linha da operação
-        const templete = `<div class="row">
+        // Cria um template HTML para uma linha da tabela
+        const template = `<div class="row">
         <div class="operation">${number} x ${i} = </div>
-        <div class="result">${result}</div>
+        <div class="result">${result} </div>
         </div>`;
 
-        const parser = new DOMParser() // Cria um novo parser de DOM
+        const parser = new DOMParser(); // Cria um novo objeto DOMParser
 
-        const htmlTemplete = parser.parseFromString(templete, "text/html") // Converte o template de string para um documento HTML
+        // Converte a string HTML em um documento HTML
+        const htmlTemplate = parser.parseFromString(template, "text/html");
 
-        const row = htmlTemplete.querySelector('.row'); // Seleciona a linha da operação dentro do documento HTML
+        // Seleciona a linha da tabela do novo documento HTML
+        const row = htmlTemplate.querySelector(".row");
 
-        multiplicationTable.appendChild(row); // Adiciona a linha da operação à tabela de multiplicação
-    }
+        // Adiciona a nova linha ao elemento de tabela de multiplicação
+        multiplicationTable.appendChild(row);
+    }   
 
-    multiplicationTitle.innerHTML = number; // Atualiza o título da multiplicação com o número fornecido
+    // Atualiza o título com o número da multiplicação
+    multiplicationTitle.innerHTML = number;
 };
 
 // Eventos
 multiplicationForm.addEventListener('submit', (e) => {
-    e.preventDefault(); // Impede o envio do formulário e a recarga da página
+    e.preventDefault(); // Impede o comportamento padrão de envio do formulário
 
-    const multiplicationNumber = +numberInput.value; // Obtém o valor do número e converte para número
-    const multiplicatorNumber = +multiplicationInput.value; // Obtém o valor do multiplicador e converte para número
+    const multiplicationNumber = +numberInput.value; // Converte o valor do campo de entrada para número
+    const multiplicatorNumber = +multiplicationInput.value; // Converte o valor do campo de entrada para número
 
-    if (!multiplicationNumber || !multiplicatorNumber) return; // Se algum dos valores não for válido, interrompe a execução
+    // Verifica se os valores são válidos
+    if (!multiplicationNumber || !multiplicatorNumber) return;
 
-    createTable(multiplicationNumber, multiplicatorNumber) // Chama a função para criar a tabela de multiplicação
-})
+    // Cria a tabela de multiplicação com os valores fornecidos
+    createTable(multiplicationNumber, multiplicatorNumber);
+});
